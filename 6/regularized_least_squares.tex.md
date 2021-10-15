@@ -41,7 +41,7 @@ $$
 $$
 \min_{w\in\R^d}\frac{1}{n}\sum_{i=1}^n(y_i-w^Tx_i)^2
 $$
-* we often denote(표기) $\frac{1}{n}\sum_{i=1}^n(y_i-w^Tx_i)^2$ as $\hat L(w)$
+* we often denote $\frac{1}{n}\sum_{i=1}^n(y_i-w^Tx_i)^2$ as $\hat L(w)$
 * This is least square problems associasted to linear system
 $$
 \hat L(w) = \frac{1}{n}||\hat Y-\hat Xw||^2\\
