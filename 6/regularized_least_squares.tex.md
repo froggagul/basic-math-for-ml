@@ -27,7 +27,7 @@ $$
 S_n \rightarrow \hat f=\hat f_{S_n}
 $$
 * $\hat f$ is a estimation of $f_P$ given the observed examples $S_n$
-### Linear functions
+### Linear function space
 * we can simplify problem to linear regression to get some intuitions
 * Let $H$ be the space of linear functions
   $H=\{f:X\rightarrow \R |f(x)=w^Tx \}$
@@ -122,7 +122,8 @@ $$
 $$
 * for small s, $F(s) \approx 1/\lambda $
 * for bigger s, $F(s) \approx 1/s $
-* it makes model more robust
+
+* for bigger $\lambda$, model becomes more stable in numerical analysis view
 
 #### Ridge regression
 $\hat w^\lambda=(\hat X^T\hat X + \lambda I)^{-1}\hat 
@@ -130,7 +131,7 @@ X^T\hat Y$ is the solution of
 $$
 \min_{w\in \R^d}||\hat Y-\hat Xw||^2+\lambda||w||^2
 $$
-* hmmteresting...!!!
+* interesting...!!!
 
 ### Reference
 1. https://www.youtube.com/watch?v=kNWONiLbfVs&list=PLyGKBDfnk-iB4Xz_EAJNEgGF5I-6OzRNI&index=2
