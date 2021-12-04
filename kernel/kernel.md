@@ -10,6 +10,10 @@
     * neareset neighbours
     * 암튼 얘네 둘다 memory based method의 일종이란다.
         * 이 단어는 어떤 맥락에서 언급된 것일까? 그 반대는?
+        * 2021.12.04 수정
+            * These methods store the entire training set in order to make predictions for future data points.
+            * Neareset neighbours assign label of new vector same to closest example for training set. 
+        * *그 반대는 model based라는데 추후에 다뤄보도록 하자*
 * 이들은 공통적으로 vector간 similarity를 구할 수 있는 metric이 요구된다.
 * 많은 linear parametric model들은 "dual representation"으로 표현될 수 있는데, 이 과정에서 kernel function이 필요하다.
 
@@ -126,7 +130,17 @@ $$
 c=(\hat K+\lambda I)^{-1}\hat Y, \;\;(\hat K)_{ij}=\Phi(x_i)^T\Phi(x_j)=k(x_i, x_j)
 $$
 $\hat K$ is the kernel matrix, the Gram matrix of the data
-
+#### legitimate kernel characteristics
+1. symmetric
+2. positive definite
+    * eigen values of kernel is always either zero or positive (cannot be negative)
+    $$
+    a^T\hat Ka\ge 0, \forall a \in \R^n
+    \\\iff \sum_{i, j=1}^nk(x_i, x_j)a_ia_j \ge 0
+    $$
+    * for any $a_1,\dots,a_n \in \R, x_1, \dots, x_n \in X$
+    * $\sum_{i, j=1}^nk(x_i, x_j)a_ia_j = \sum_{i,j=1}^n\Phi(x_i)^T\Phi(x_j)a_ia_j=(\sum_{i=1}^n\Phi(x_i)a_i)^T(\sum_{i=1}^n\Phi(x_i)a_i)=||\sum_{i=1}^n\Phi(x_i)a_i||^2$
+        * this makes k symmetric and positive definite
 <!-- ## 6.1. Dual Representation
 다시 PRML로 돌아와서, SVM를 dual representation으로 나타내다 보면 이 과정에서 kernel 함수가 자연스럽게 보이게 되는데, 이를 알아보자.
 
